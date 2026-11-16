@@ -15,7 +15,6 @@ export const site = {
   footer: {
     blurb:
       "A University of Melbourne student club where engineers of every discipline design, build and ship things together.",
-    copyright: "© 2027 Engineers of Melbourne Creators Club.",
   },
   contact: {
     email: "hello@example.com", // TODO: do we even have an email lol

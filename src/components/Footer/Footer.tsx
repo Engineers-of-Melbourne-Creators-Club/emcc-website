@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { cacheLife } from "next/cache";
 import { site } from "@/content/site";
 import styles from "./Footer.module.css";
 
@@ -45,7 +46,16 @@ export function Footer() {
         </div>
       </div>
 
-      <p className={styles.copyright}>{site.footer.copyright}</p>
+      <p className={styles.copyright}>
+        © <CurrentYear /> {site.longName}.
+      </p>
     </footer>
   );
+}
+
+// Cached for a day so the year rolls over on its own each January while the page stays static.
+async function CurrentYear() {
+  "use cache";
+  cacheLife("days");
+  return new Date().getFullYear();
 }
