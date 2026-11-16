@@ -56,7 +56,7 @@
   padding-top: var(--space-lg);
   font-size: var(--text-meta-size);
   line-height: var(--text-meta-leading);
-  color: var(--color-text-on-dark-faint);
+  color: var(--color-text-on-dark-muted);
 }
 
 /* brand column full width above two link columns. */
