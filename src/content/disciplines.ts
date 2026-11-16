@@ -1,5 +1,6 @@
 import type { Discipline } from "@/lib/types";
 
+// TODO: UPDATE DESCRIPTIONS
 export const disciplines: { name: Discipline; description: string }[] = [
   {
     name: "Mechanical",
@@ -14,7 +15,7 @@ export const disciplines: { name: Discipline; description: string }[] = [
   {
     name: "Software",
     description:
-      "Apps, firmware and everything in between: web, mobile and embedded code.",
+      "Machine learning, software development, and quantitative finance.",
   },
   {
     name: "Civil",
