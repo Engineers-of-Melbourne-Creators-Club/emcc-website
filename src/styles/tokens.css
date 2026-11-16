@@ -4,9 +4,9 @@
   --color-ink: #0e0f11;
   --color-paper: #f7f7f5;
   --color-surface: #ffffff;
-  /* Two shades so small blue text passes WCAG AA (4.5:1) on both light and dark backgrounds. */
-  --color-accent: #3b68e6;
-  --color-accent-on-dark: #4572f1;
+  /* Two shades so small accent text passes WCAG AA (4.5:1) on both light and dark backgrounds. */
+  --color-accent: #c2410c;
+  --color-accent-on-dark: #f26b2e;
   --color-text-primary: #111214;
   --color-text-secondary: #6b6e73;
   --color-text-on-dark-primary: #ededeb;
@@ -15,7 +15,7 @@
   --color-border: #dadbd8;
   --color-border-on-dark: #2a2c30;
   --color-placeholder: #e6e6e3;
-  --color-danger: #c2412d;
+  --color-danger: #b91c1c;
   --color-grid-minor: rgb(42 44 48 / 40%); /* --color-border-on-dark at 40% */
 
   /* Typography. --font-geist-* are set on <html> by the geist package. */
@@ -161,7 +161,7 @@
 
   /* Interaction */
   --transition: 150ms ease-out;
-  --selection: rgb(59 104 230 / 20%); /* --color-accent at 20% */
+  --selection: rgb(194 65 12 / 20%); /* --color-accent at 20% */
 }
 
 /* Smaller screens scale headings and padding down through the tokens, so components need no media queries of their own for these. */
