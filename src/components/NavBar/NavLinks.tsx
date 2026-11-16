@@ -1,6 +1,6 @@
 "use client";
 
-// client only because the active link depends on the current URL. 
+// client only because the active link depends on the current URL.
 // The rest of the nav stays server-rendered.
 import Link from "next/link";
 import { usePathname } from "next/navigation";

@@ -77,3 +77,14 @@ a:hover {
     scroll-behavior: auto !important;
   }
 }
+
+/* Sticky footer: short pages still push the footer to the bottom of the viewport. */
+body {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}

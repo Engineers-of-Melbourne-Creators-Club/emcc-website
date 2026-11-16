@@ -14,14 +14,17 @@ export const site = {
   join: { label: "Join", href: "/contact" } satisfies SiteLink,
   footer: {
     blurb:
-      "A University of Melbourne student club where engineers of every discipline design, build and ship things together.", 
-    copyright: "© 2027 Engineers of Melbourne Creators Club.", 
+      "A University of Melbourne student club where engineers of every discipline design, build and ship things together.",
+    copyright: "© 2027 Engineers of Melbourne Creators Club.",
   },
   contact: {
     email: "hello@example.com", // TODO: do we even have an email lol
   },
   socials: {
-    instagram: { label: "@emc2.melb", href: "https://www.instagram.com/emc2.melb/" }, 
+    instagram: {
+      label: "@emc2.melb",
+      href: "https://www.instagram.com/emc2.melb/",
+    },
     discord: { label: "Join our server", href: "#" }, // TODO: is our discord even public?? maybe remove
   },
 };
