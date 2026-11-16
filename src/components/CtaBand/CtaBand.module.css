@@ -1,0 +1,19 @@
+.band {
+  background: var(--color-ink);
+  padding-block: var(--section-pad-cta);
+}
+
+.content {
+  display: grid;
+  justify-items: start;
+  gap: var(--actions-gap);
+}
+
+.title {
+  max-width: var(--cta-title-max);
+  font-size: var(--text-h2-cta-size);
+  line-height: var(--text-h2-cta-leading);
+  letter-spacing: var(--text-h2-cta-tracking);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-on-dark-primary);
+}

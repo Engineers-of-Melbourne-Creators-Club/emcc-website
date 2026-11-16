@@ -1,0 +1,75 @@
+.section {
+  display: grid;
+  gap: var(--space-4xl);
+  padding-block: var(--section-pad);
+}
+
+.projects {
+  gap: var(--space-3xl);
+  justify-items: start;
+}
+
+.values {
+  display: grid;
+  grid-template-columns: repeat(4, var(--value-item-width));
+  gap: var(--space-3xl);
+}
+
+.projectGrid {
+  display: grid;
+  grid-template-columns: repeat(3, var(--project-card-width));
+  gap: var(--space-xl);
+}
+
+.stats {
+  background: var(--color-ink);
+  padding-block: var(--section-pad-stats);
+}
+
+.statsRow {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-xl);
+}
+
+.partners {
+  display: grid;
+  gap: var(--actions-gap);
+  padding-block: var(--section-pad-sm);
+}
+
+.partnerRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xl);
+}
+
+.partner {
+  width: var(--partner-width);
+  height: var(--partner-height);
+  border: 1px solid var(--color-border);
+}
+
+@media (max-width: 1023px) {
+  .values {
+    grid-template-columns: repeat(2, var(--value-item-width));
+  }
+
+  .projectGrid {
+    grid-template-columns: repeat(2, var(--project-card-width));
+  }
+}
+
+@media (max-width: 767px) {
+  .values,
+  .projectGrid {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .statsRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: var(--space-2xl);
+  }
+}
