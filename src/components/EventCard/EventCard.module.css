@@ -1,0 +1,83 @@
+.card {
+  display: flex;
+  gap: var(--space-lg);
+  height: var(--event-card-height);
+  padding: var(--space-lg);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+
+.date {
+  display: grid;
+  align-content: start;
+  justify-items: center;
+}
+
+.day {
+  font-size: var(--text-event-day-size);
+  line-height: var(--text-stat-leading);
+  font-weight: var(--weight-medium);
+}
+
+.month {
+  font-family: var(--font-mono);
+  font-size: var(--text-tag-size);
+  line-height: var(--text-tag-leading);
+  letter-spacing: var(--text-tag-tracking);
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+.body {
+  display: grid;
+  align-content: start;
+  gap: var(--space-2xs);
+  min-width: 0;
+}
+
+.title {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: var(--text-body-size);
+  line-height: var(--text-h3-leading);
+  font-weight: var(--weight-medium);
+}
+
+.location,
+.rowDate {
+  font-family: var(--font-mono);
+  font-size: var(--text-label-size);
+  line-height: var(--text-label-leading);
+  color: var(--color-text-secondary);
+}
+
+.description {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+  font-size: var(--text-body-sm-size);
+  line-height: var(--text-body-sm-leading);
+  color: var(--color-text-secondary);
+}
+
+.row {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-xl);
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.rowDate {
+  flex-shrink: 0;
+  width: var(--event-row-date-width);
+}
+
+.rowTitle {
+  font-size: var(--text-h3-size);
+  line-height: var(--text-h3-leading);
+  font-weight: var(--weight-medium);
+}
