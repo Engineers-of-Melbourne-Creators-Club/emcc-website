@@ -1,0 +1,71 @@
+/* Fixed height keeps every card in the grid identical; long text is clipped instead. */
+.card {
+  position: relative;
+  display: block;
+  height: var(--project-card-height);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  transition: border-color var(--transition);
+}
+
+.card:hover {
+  text-decoration: none;
+  border-color: var(--color-text-primary);
+}
+
+.image {
+  height: var(--project-card-image);
+}
+
+.body {
+  display: grid;
+  gap: var(--project-card-gap);
+  padding: var(--space-lg);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--tag-gap);
+}
+
+.title {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: var(--text-h3-size);
+  line-height: var(--text-h3-leading);
+  letter-spacing: var(--text-h3-tracking);
+  font-weight: var(--weight-medium);
+}
+
+.description {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
+  font-size: var(--text-body-sm-size);
+  line-height: var(--text-body-sm-leading);
+  color: var(--color-text-secondary);
+}
+
+/* Pinned to the corner so it sits in the same place on every card. */
+.more {
+  position: absolute;
+  left: var(--space-lg);
+  bottom: var(--space-lg);
+  font-size: var(--text-button-size);
+  line-height: var(--text-button-leading);
+  font-weight: var(--weight-medium);
+  color: var(--color-accent);
+}
+
+.arrow {
+  display: inline-block;
+  transition: transform var(--transition);
+}
+
+.card:hover .arrow {
+  transform: translateX(2px);
+}

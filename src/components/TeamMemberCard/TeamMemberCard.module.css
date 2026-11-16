@@ -1,0 +1,26 @@
+.card {
+  width: var(--team-card-width);
+  height: var(--team-card-height);
+}
+
+.photo {
+  aspect-ratio: 1 / 1;
+  margin-bottom: var(--space-xs);
+}
+
+.name {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: var(--text-name-size);
+  line-height: var(--text-h3-leading);
+  font-weight: var(--weight-medium);
+}
+
+.role {
+  font-family: var(--font-mono);
+  font-size: var(--text-label-size);
+  line-height: var(--text-label-leading);
+  letter-spacing: var(--text-label-tracking);
+  color: var(--color-text-secondary);
+}

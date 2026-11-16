@@ -1,0 +1,17 @@
+.tag {
+  display: inline-block;
+  padding: var(--tag-pad);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: var(--text-tag-size);
+  line-height: var(--text-tag-leading);
+  letter-spacing: var(--text-tag-tracking);
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+.onDark {
+  border-color: var(--color-border-on-dark);
+  color: var(--color-text-on-dark-secondary);
+}

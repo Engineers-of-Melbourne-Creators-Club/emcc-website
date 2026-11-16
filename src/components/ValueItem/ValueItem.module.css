@@ -1,0 +1,35 @@
+/* Fixed height so every item in a row lines up. The parent grid decides the width. */
+.item {
+  display: grid;
+  align-content: start;
+  gap: var(--value-item-gap);
+  height: var(--value-item-height);
+  padding: var(--space-lg) var(--space-md) 0 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.index {
+  font-family: var(--font-mono);
+  font-size: var(--text-label-size);
+  line-height: var(--text-label-leading);
+  letter-spacing: var(--text-label-tracking);
+  color: var(--color-accent);
+}
+
+.title {
+  font-size: var(--text-h3-value-size);
+  line-height: var(--text-h3-leading);
+  letter-spacing: var(--text-h3-tracking);
+  font-weight: var(--weight-medium);
+}
+
+.description {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
+  font-size: var(--text-body-sm-size);
+  line-height: var(--text-body-sm-leading);
+  color: var(--color-text-secondary);
+}

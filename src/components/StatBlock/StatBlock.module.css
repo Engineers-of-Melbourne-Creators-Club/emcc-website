@@ -1,0 +1,21 @@
+.stat {
+  display: grid;
+  gap: var(--space-xs);
+}
+
+.value {
+  font-size: var(--text-stat-size);
+  line-height: var(--text-stat-leading);
+  letter-spacing: var(--text-stat-tracking);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-on-dark-primary);
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: var(--text-label-size);
+  line-height: var(--text-label-leading);
+  letter-spacing: var(--text-label-tracking);
+  text-transform: uppercase;
+  color: var(--color-text-on-dark-secondary);
+}

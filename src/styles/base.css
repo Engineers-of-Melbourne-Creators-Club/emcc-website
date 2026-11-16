@@ -88,3 +88,9 @@ body {
 main {
   flex: 1;
 }
+
+/* Shared content width: centred, capped, with page gutters on narrow screens. */
+.container {
+  width: min(var(--content-max), 100% - 2 * var(--page-gutter));
+  margin-inline: auto;
+}

@@ -1,0 +1,55 @@
+.band {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-ink);
+  padding: var(--title-band-pad-top) 0 var(--title-band-pad-bottom);
+}
+
+/* Sits above the grid, which is absolutely positioned behind it. */
+.content {
+  position: relative;
+  display: grid;
+  justify-items: start;
+  gap: var(--space-lg);
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--text-label-size);
+  line-height: var(--text-label-leading);
+  letter-spacing: var(--text-label-tracking);
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.title {
+  font-size: var(--text-h1-size);
+  line-height: var(--text-h1-leading);
+  letter-spacing: var(--text-h1-tracking);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-on-dark-primary);
+}
+
+.hero {
+  padding: var(--hero-pad-top) 0 var(--hero-pad-bottom);
+}
+
+.hero .title {
+  font-size: var(--text-display-size);
+  line-height: var(--text-display-leading);
+  letter-spacing: var(--text-display-tracking);
+}
+
+.intro {
+  max-width: var(--hero-intro-max);
+  font-size: var(--text-body-lg-size);
+  line-height: var(--text-body-lg-leading);
+  color: var(--color-text-on-dark-secondary);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--hero-actions-gap);
+}

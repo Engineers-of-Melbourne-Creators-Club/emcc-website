@@ -14,6 +14,8 @@
   --color-border: #dadbd8;
   --color-border-on-dark: #2a2c30;
   --color-placeholder: #e6e6e3;
+  --color-danger: #c2412d;
+  --color-grid-minor: rgb(42 44 48 / 40%); /* --color-border-on-dark at 40% */
 
   /* Typography. --font-geist-* are set on <html> by the geist package. */
   --font-sans: var(--font-geist-sans), system-ui, sans-serif;
@@ -96,6 +98,39 @@
   --footer-list-gap: 10px;
   --footer-blurb-max: 280px;
 
+  /* Component sizes that sit off the spacing scale */
+  --button-pad: 13px 22px;
+  --tag-pad: 3px 8px;
+  --tag-gap: 6px;
+  --title-band-pad-top: 110px;
+  --title-band-pad-bottom: 80px;
+  --hero-pad-top: 140px;
+  --hero-pad-bottom: 120px;
+  --hero-intro-max: 560px;
+  --hero-actions-gap: 28px;
+  --section-header-max: 640px;
+  --value-item-height: 184px;
+  --value-item-gap: 14px;
+  --project-card-width: 300px;
+  --project-card-height: 380px;
+  --project-card-image: 180px;
+  --project-card-gap: 10px;
+  --team-card-width: 200px;
+  --team-card-height: 256px;
+  --event-card-width: 360px;
+  --event-card-height: 150px;
+  --event-row-date-width: 120px;
+  --text-name-size: 15px;
+  --text-event-day-size: 32px;
+  --text-filter-size: 13.5px;
+  --filter-tab-pad: 10px 20px;
+  --filter-tab-border: 1.5px;
+  --input-height: 44px;
+  --input-pad: 12px 14px;
+  --textarea-height: 110px;
+  --grid-cell: 24px;
+  --grid-major: 96px;
+
   /* Radius */
   --radius-none: 0;
   --radius-sm: 2px;
@@ -111,4 +146,26 @@
   /* Interaction */
   --transition: 150ms ease-out;
   --selection: rgb(61 108 240 / 20%); /* --color-accent at 20% */
+}
+
+/* Smaller screens scale headings and padding down through the tokens, so components need no media queries of their own for these. */
+@media (max-width: 1023px) {
+  :root {
+    --text-display-size: 56px;
+    --text-h1-size: 48px;
+    --text-h2-size: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --text-display-size: 44px;
+    --text-h1-size: 40px;
+    --text-h2-size: 26px;
+    --title-band-pad-top: 72px;
+    --title-band-pad-bottom: 56px;
+    --hero-pad-top: 72px;
+    --hero-pad-bottom: 56px;
+    --section-pad: 56px;
+  }
 }

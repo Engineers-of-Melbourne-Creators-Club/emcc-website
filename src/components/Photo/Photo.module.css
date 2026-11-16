@@ -1,0 +1,14 @@
+.photo {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-placeholder);
+}
+
+.image {
+  object-fit: cover;
+}
+
+.placeholder {
+  position: absolute;
+  inset: 0;
+}

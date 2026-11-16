@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import styles from "./styleguide.module.css";
+import { ComponentSections } from "./ComponentSections";
 
-// Temporary page for checking tokens against Figma. Delete before launch (Phase 6).
+// Temporary page for checking tokens and components while the site is built. Delete before launch.
 export const metadata: Metadata = {
   title: "Styleguide",
-  description: "Design tokens for the EMC² website.",
+  description: "Design tokens and components for the EMC² website.",
   robots: { index: false },
 };
 
@@ -109,6 +110,8 @@ export default function Styleguide() {
           ))}
         </ul>
       </section>
+
+      <ComponentSections />
     </div>
   );
 }
