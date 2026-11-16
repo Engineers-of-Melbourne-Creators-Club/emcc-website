@@ -23,6 +23,7 @@
 }
 
 .title {
+  max-width: var(--title-max);
   font-size: var(--text-h1-size);
   line-height: var(--text-h1-leading);
   letter-spacing: var(--text-h1-tracking);
@@ -34,7 +35,12 @@
   padding: var(--hero-pad-top) 0 var(--hero-pad-bottom);
 }
 
+.hero .content {
+  gap: var(--space-xl);
+}
+
 .hero .title {
+  max-width: var(--hero-title-max);
   font-size: var(--text-display-size);
   line-height: var(--text-display-leading);
   letter-spacing: var(--text-display-tracking);
@@ -51,5 +57,5 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: var(--hero-actions-gap);
+  gap: var(--actions-gap);
 }
