@@ -37,4 +37,6 @@ export type ClubEvent = {
   date: string;
   venue: string;
   description: string;
+  // Optional external page: an Instagram post, ticket page, sign-up form, etc.
+  link?: string;
 };
