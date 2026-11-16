@@ -66,6 +66,7 @@
 .row {
   display: flex;
   align-items: baseline;
+  justify-content: space-between;
   gap: var(--space-xl);
   padding: var(--space-md) 0;
   border-bottom: 1px solid var(--color-border);
@@ -73,10 +74,10 @@
 
 .rowDate {
   flex-shrink: 0;
-  width: var(--event-row-date-width);
 }
 
 .rowTitle {
+  text-align: right;
   font-size: var(--text-h3-size);
   line-height: var(--text-h3-leading);
   font-weight: var(--weight-medium);
