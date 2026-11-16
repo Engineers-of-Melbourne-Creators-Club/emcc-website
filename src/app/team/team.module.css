@@ -1,0 +1,17 @@
+.groups {
+  display: grid;
+  gap: var(--group-gap);
+  padding: var(--section-pad-sm) 0 var(--section-pad);
+}
+
+.group {
+  display: grid;
+  gap: var(--space-xl);
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-xl);
+}
