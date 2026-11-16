@@ -19,7 +19,7 @@
   line-height: var(--text-label-leading);
   letter-spacing: var(--text-label-tracking);
   text-transform: uppercase;
-  color: var(--color-accent);
+  color: var(--color-accent-on-dark);
 }
 
 .title {

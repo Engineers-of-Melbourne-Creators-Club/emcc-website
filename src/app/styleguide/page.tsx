@@ -14,6 +14,8 @@ const colours = [
   "paper",
   "surface",
   "accent",
+  "accent-on-dark",
+  "danger",
   "text-primary",
   "text-secondary",
   "text-on-dark-primary",

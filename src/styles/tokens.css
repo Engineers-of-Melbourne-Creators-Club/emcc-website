@@ -4,7 +4,9 @@
   --color-ink: #0e0f11;
   --color-paper: #f7f7f5;
   --color-surface: #ffffff;
-  --color-accent: #3d6cf0;
+  /* Two shades so small blue text passes WCAG AA (4.5:1) on both light and dark backgrounds. */
+  --color-accent: #3b68e6;
+  --color-accent-on-dark: #4572f1;
   --color-text-primary: #111214;
   --color-text-secondary: #6b6e73;
   --color-text-on-dark-primary: #ededeb;
@@ -160,7 +162,7 @@
 
   /* Interaction */
   --transition: 150ms ease-out;
-  --selection: rgb(61 108 240 / 20%); /* --color-accent at 20% */
+  --selection: rgb(59 104 230 / 20%); /* --color-accent at 20% */
 }
 
 /* Smaller screens scale headings and padding down through the tokens, so components need no media queries of their own for these. */

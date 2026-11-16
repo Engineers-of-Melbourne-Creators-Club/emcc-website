@@ -41,7 +41,7 @@
   right: 0;
   bottom: calc(-1 * var(--space-2xs) - 2px);
   height: 2px;
-  background: var(--color-accent);
+  background: var(--color-accent-on-dark);
 }
 
 .join {
