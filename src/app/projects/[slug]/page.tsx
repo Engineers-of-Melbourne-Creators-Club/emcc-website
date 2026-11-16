@@ -33,11 +33,7 @@ export default async function ProjectDetail({
     ["Discipline", project.disciplines.join(", ")],
     ["Status", project.status],
     ["Year", project.year],
-    ["Team size", project.teamSize],
   ];
-  // No photos yet: three grey placeholders keep the gallery's shape.
-  const gallery: (string | undefined)[] =
-    project.gallery.length > 0 ? project.gallery : Array(3).fill(undefined);
 
   return (
     <>
@@ -66,23 +62,25 @@ export default async function ProjectDetail({
             </h2>
             <p className={styles.overview}>{project.overview}</p>
           </section>
-          <section aria-labelledby="gallery" className={styles.block}>
-            <h2 id="gallery" className={styles.heading}>
-              Gallery
-            </h2>
-            <ul role="list" className={styles.gallery}>
-              {gallery.map((src, i) => (
-                <li key={i}>
-                  <Photo
-                    src={src}
-                    alt={`${project.title} photo ${i + 1}`}
-                    sizes="180px"
-                    className={styles.galleryPhoto}
-                  />
-                </li>
-              ))}
-            </ul>
-          </section>
+          {project.gallery.length > 0 && (
+            <section aria-labelledby="gallery" className={styles.block}>
+              <h2 id="gallery" className={styles.heading}>
+                Gallery
+              </h2>
+              <ul role="list" className={styles.gallery}>
+                {project.gallery.map((src, i) => (
+                  <li key={src}>
+                    <Photo
+                      src={src}
+                      alt={`${project.title} photo ${i + 1}`}
+                      sizes="180px"
+                      className={styles.galleryPhoto}
+                    />
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
         </div>
 
         <aside className={styles.sidebar}>
