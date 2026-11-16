@@ -11,6 +11,7 @@ type Props = { links: SiteLink[] };
 export function MobileMenu({ links }: Props) {
   const [open, setOpen] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const rootRef = useRef<HTMLDivElement>(null);
   const panelId = useId();
 
   // escape closes the menu and returns focus to the button, so keyboard users are not stranded.
@@ -22,12 +23,20 @@ export function MobileMenu({ links }: Props) {
         buttonRef.current?.focus();
       }
     };
+    // A tap anywhere outside the menu closes it, as people expect from a dropdown.
+    const onPointerDown = (event: PointerEvent) => {
+      if (!rootRef.current?.contains(event.target as Node)) setOpen(false);
+    };
     document.addEventListener("keydown", onKeyDown);
-    return () => document.removeEventListener("keydown", onKeyDown);
+    document.addEventListener("pointerdown", onPointerDown);
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      document.removeEventListener("pointerdown", onPointerDown);
+    };
   }, [open]);
 
   return (
-    <div className={styles.mobile}>
+    <div ref={rootRef} className={styles.mobile}>
       <button
         ref={buttonRef}
         type="button"
