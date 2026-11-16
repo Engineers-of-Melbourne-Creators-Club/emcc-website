@@ -1,0 +1,25 @@
+.grid {
+  position: absolute;
+  top: var(--grid-cell);
+  bottom: 0;
+  left: calc(
+    max(var(--page-gutter), (100% - var(--content-max)) / 2) - 20 *
+      var(--grid-major)
+  );
+  right: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right, var(--color-border-on-dark) 1px, transparent 1px),
+    linear-gradient(
+      to bottom,
+      var(--color-border-on-dark) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to right, var(--color-grid-minor) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-grid-minor) 1px, transparent 1px);
+  background-size:
+    var(--grid-major) var(--grid-major),
+    var(--grid-major) var(--grid-major),
+    var(--grid-cell) var(--grid-cell),
+    var(--grid-cell) var(--grid-cell);
+}
