@@ -1,0 +1,150 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-ink);
+  padding: var(--space-7xl) 0 var(--section-pad-sm);
+}
+
+.heroContent {
+  position: relative;
+  display: grid;
+  justify-items: start;
+  gap: var(--space-lg);
+}
+
+.back {
+  font-family: var(--font-mono);
+  font-size: var(--text-label-size);
+  line-height: var(--text-label-leading);
+  color: var(--color-text-on-dark-secondary);
+}
+
+.back:hover {
+  color: var(--color-text-on-dark-primary);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.title {
+  font-size: var(--text-h1-size);
+  line-height: var(--text-h1-leading);
+  letter-spacing: var(--text-h1-tracking);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-on-dark-primary);
+}
+
+.body {
+  display: grid;
+  grid-template-columns: 1fr var(--sidebar-width);
+  align-items: start;
+  gap: var(--column-gap);
+  padding: var(--space-5xl) 0 var(--section-pad);
+}
+
+.main,
+.sidebar {
+  display: grid;
+  gap: var(--space-3xl);
+}
+
+.sidebar {
+  gap: var(--space-2xl);
+}
+
+.block {
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.heading {
+  font-size: var(--text-h3-lg-size);
+  line-height: var(--text-h3-leading);
+  letter-spacing: var(--text-h3-tracking);
+  font-weight: var(--weight-medium);
+}
+
+.overview {
+  color: var(--color-text-secondary);
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.galleryPhoto {
+  width: var(--gallery-photo-width);
+  height: var(--gallery-photo-height);
+}
+
+.spec {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-md);
+  padding-block: var(--space-sm);
+  border-top: 1px solid var(--color-border);
+  font-size: var(--text-body-sm-size);
+  line-height: var(--text-body-sm-leading);
+}
+
+.specLabel {
+  font-family: var(--font-mono);
+  font-size: var(--text-label-size);
+  letter-spacing: var(--text-label-tracking);
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+.people {
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.person {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+/* The one place photos are round, so small faces read as people rather than thumbnails. */
+.avatar {
+  flex-shrink: 0;
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  border-radius: 50%;
+}
+
+.name {
+  font-size: var(--text-body-sm-size);
+  line-height: var(--text-body-sm-leading);
+  font-weight: var(--weight-medium);
+}
+
+.role {
+  font-size: var(--text-label-size);
+  line-height: var(--text-label-leading);
+  color: var(--color-accent);
+}
+
+.links {
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.link {
+  font-size: var(--text-body-sm-size);
+  font-weight: var(--weight-medium);
+  color: var(--color-accent);
+}
+
+@media (max-width: 1023px) {
+  .body {
+    grid-template-columns: 1fr;
+  }
+}

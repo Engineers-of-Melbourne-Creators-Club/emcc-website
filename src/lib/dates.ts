@@ -1,18 +1,18 @@
 // Event dates are plain "YYYY-MM-DD" strings. Reading the parts directly avoids timezone
-// shifts, and a fixed month list avoids locale quirks (en-AU writes September as "Sept").
+// shifts, and fixed month lists avoid locale quirks (en-AU writes September as "Sept").
 const MONTHS = [
-  "Jan",
-  "Feb",
-  "Mar",
-  "Apr",
+  "January",
+  "February",
+  "March",
+  "April",
   "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sep",
-  "Oct",
-  "Nov",
-  "Dec",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
 ];
 
 const parts = (date: string) => {
@@ -20,9 +20,10 @@ const parts = (date: string) => {
   return { year, month: MONTHS[month - 1], day };
 };
 
-export const eventDay = (date: string) => String(parts(date).day);
-export const eventMonth = (date: string) => parts(date).month;
-export const eventFullDate = (date: string) => {
-  const { year, month, day } = parts(date);
-  return `${day} ${month} ${year}`;
+export const eventDay = (date: string) =>
+  String(parts(date).day).padStart(2, "0");
+export const eventMonth = (date: string) => parts(date).month.slice(0, 3);
+export const eventMonthYear = (date: string) => {
+  const { year, month } = parts(date);
+  return `${month} ${year}`;
 };

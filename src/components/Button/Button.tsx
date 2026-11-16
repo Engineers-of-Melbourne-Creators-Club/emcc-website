@@ -19,7 +19,7 @@ export function Button({
   disabled,
 }: Props) {
   const className = `${styles.button} ${styles[variant]}`;
-  
+
   const content = (
     <>
       {children}{" "}

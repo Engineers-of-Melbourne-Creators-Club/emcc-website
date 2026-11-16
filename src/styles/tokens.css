@@ -107,8 +107,12 @@
   --hero-pad-top: 140px;
   --hero-pad-bottom: 120px;
   --hero-intro-max: 560px;
-  --hero-actions-gap: 28px;
+  --actions-gap: 28px;
+  --hero-title-max: 600px;
+  --title-max: 800px;
+  --cta-title-max: 540px;
   --section-header-max: 640px;
+  --value-item-width: 260px;
   --value-item-height: 184px;
   --value-item-gap: 14px;
   --project-card-width: 300px;
@@ -119,7 +123,6 @@
   --team-card-height: 256px;
   --event-card-width: 360px;
   --event-card-height: 150px;
-  --event-row-date-width: 120px;
   --text-name-size: 15px;
   --text-event-day-size: 32px;
   --text-filter-size: 13.5px;
@@ -128,6 +131,18 @@
   --input-height: 44px;
   --input-pad: 12px 14px;
   --textarea-height: 110px;
+  --partner-width: 150px;
+  --partner-height: 70px;
+  --story-photo-width: 480px;
+  --story-photo-height: 320px;
+  --gallery-photo-width: 180px;
+  --gallery-photo-height: 140px;
+  --avatar-size: 40px;
+  --sidebar-width: 320px;
+  --contact-details-width: 360px;
+  --column-gap: 60px;
+  --group-gap: 56px;
+  --text-h3-lg-size: 22px;
   --grid-cell: 24px;
   --grid-major: 96px;
 
@@ -141,7 +156,7 @@
   --section-pad: 80px;
   --section-pad-cta: 96px;
   --section-pad-stats: 56px;
-  --section-pad-partners: 72px;
+  --section-pad-sm: 72px;
 
   /* Interaction */
   --transition: 150ms ease-out;
@@ -167,5 +182,7 @@
     --hero-pad-top: 72px;
     --hero-pad-bottom: 56px;
     --section-pad: 56px;
+    --section-pad-sm: 56px;
+    --section-pad-cta: 72px;
   }
 }

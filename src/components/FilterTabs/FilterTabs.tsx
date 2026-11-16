@@ -4,7 +4,8 @@ type Props<T extends string> = {
   label: string;
   options: readonly T[];
   value: T;
-  onChange: (value: T) => void;
+  // Optional so the tabs can be server-rendered (inactive) before JavaScript loads.
+  onChange?: (value: T) => void;
 };
 
 // Controlled: the parent owns the selected value (the Projects page keeps it in the URL).
@@ -23,7 +24,7 @@ export function FilterTabs<T extends string>({
           type="button"
           aria-pressed={option === value}
           className={styles.tab}
-          onClick={() => onChange(option)}
+          onClick={onChange && (() => onChange(option))}
         >
           {option}
         </button>

@@ -94,3 +94,23 @@ main {
   width: min(var(--content-max), 100% - 2 * var(--page-gutter));
   margin-inline: auto;
 }
+
+/* Mono eyebrow label above headings and detail values. */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--text-label-size);
+  line-height: var(--text-label-leading);
+  letter-spacing: var(--text-label-tracking);
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+/* Hidden visually but still read by screen readers. */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}

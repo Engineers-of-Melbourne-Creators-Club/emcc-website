@@ -1,4 +1,4 @@
-import { eventFullDate } from "@/lib/dates";
+import { eventMonthYear } from "@/lib/dates";
 import styles from "./EventCard.module.css";
 
 type Props = { date: string; title: string };
@@ -8,7 +8,7 @@ export function EventRow({ date, title }: Props) {
   return (
     <div className={styles.row}>
       <time dateTime={date} className={styles.rowDate}>
-        {eventFullDate(date)}
+        {eventMonthYear(date)}
       </time>
       <p className={styles.rowTitle}>{title}</p>
     </div>

@@ -1,0 +1,26 @@
+.body {
+  display: grid;
+  gap: var(--group-gap);
+  padding: var(--section-pad-sm) 0 var(--section-pad);
+}
+
+.section {
+  display: grid;
+  gap: var(--space-xl);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, var(--event-card-width));
+  gap: var(--space-lg);
+}
+
+.empty {
+  color: var(--color-text-secondary);
+}
+
+@media (max-width: 767px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
