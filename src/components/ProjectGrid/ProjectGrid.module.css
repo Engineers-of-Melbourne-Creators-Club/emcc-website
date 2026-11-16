@@ -1,0 +1,25 @@
+/* Exactly three cards wide, so the filter tabs line up with the grid's left edge. */
+.column {
+  display: grid;
+  gap: var(--space-3xl);
+  width: min(100%, 3 * var(--project-card-width) + 2 * var(--space-xl));
+  margin-inline: auto;
+}
+
+/* Flex rather than grid so a short last row is centred. */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-xl);
+}
+
+.item {
+  width: var(--project-card-width);
+}
+
+@media (max-width: 767px) {
+  .item {
+    width: 100%;
+  }
+}
