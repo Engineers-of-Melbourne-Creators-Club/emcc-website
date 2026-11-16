@@ -1,4 +1,5 @@
 import { eventDay, eventMonth } from "@/lib/dates";
+import { EventTitle } from "./EventTitle";
 import styles from "./EventCard.module.css";
 
 type Props = {
@@ -6,9 +7,10 @@ type Props = {
   title: string;
   location: string;
   description: string;
+  link?: string;
 };
 
-export function EventCard({ date, title, location, description }: Props) {
+export function EventCard({ date, title, location, description, link }: Props) {
   return (
     <article className={styles.card}>
       {/* <time> gives the date in a machine-readable form for search engines and assistive tech. */}
@@ -17,7 +19,9 @@ export function EventCard({ date, title, location, description }: Props) {
         <span className={styles.month}>{eventMonth(date)}</span>
       </time>
       <div className={styles.body}>
-        <h3 className={styles.title}>{title}</h3>
+        <h3 className={styles.title}>
+          <EventTitle title={title} link={link} />
+        </h3>
         <p className={styles.location}>{location}</p>
         <p className={styles.description}>{description}</p>
       </div>

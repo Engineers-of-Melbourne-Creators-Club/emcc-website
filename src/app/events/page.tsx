@@ -43,6 +43,7 @@ export default async function Events() {
                     title={event.title}
                     location={event.venue}
                     description={event.description}
+                    link={event.link}
                   />
                 </li>
               ))}
@@ -65,7 +66,11 @@ export default async function Events() {
             <ul role="list">
               {past.map((event) => (
                 <li key={`${event.date}-${event.title}`}>
-                  <EventRow date={event.date} title={event.title} />
+                  <EventRow
+                    date={event.date}
+                    title={event.title}
+                    link={event.link}
+                  />
                 </li>
               ))}
             </ul>
