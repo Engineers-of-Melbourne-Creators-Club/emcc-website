@@ -1,0 +1,53 @@
+.button {
+  display: inline-block;
+  font-size: var(--text-button-size);
+  line-height: var(--text-button-leading);
+  font-weight: var(--weight-medium);
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: none;
+  transition: background-color var(--transition);
+}
+
+.button:hover {
+  text-decoration: none;
+}
+
+/* inline-block so the hover nudge (a transform) applies to it. */
+.arrow {
+  display: inline-block;
+  transition: transform var(--transition);
+}
+
+.button:hover /* inline-block so the hover nudge (a transform) applies to it. */
+.arrow {
+  display: inline-block;
+  transform: translateX(2px);
+}
+
+.primary {
+  padding: var(--button-pad);
+  background: var(--color-accent);
+  color: var(--color-surface);
+}
+
+.primary:hover {
+  background: color-mix(in srgb, var(--color-accent), black 8%);
+}
+
+.primary:active {
+  background: color-mix(in srgb, var(--color-accent), black 14%);
+}
+
+.primary:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.link-dark {
+  color: var(--color-text-on-dark-primary);
+}
+
+.link-light {
+  color: var(--color-accent);
+}
