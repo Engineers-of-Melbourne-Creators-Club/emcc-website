@@ -1,31 +1,23 @@
 import type { Metadata } from "next";
-import { Titan_One, Work_Sans } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 import "./globals.css";
 
-const titanOne = Titan_One({
-  variable: "--font-titan-one",
-  weight: "400",
-  subsets: ["latin"],
-});
-
-const workSans = Work_Sans({
-  variable: "--font-work-sans",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
-  title: "EMCC - Engineers of Melbourne Creators Club",
+  title: { default: "EMC²", template: "%s | EMC²" },
   description:
-    "A student community designing, building and breaking things together.",
+    "Engineers of Melbourne Creators Club, a University of Melbourne student engineering club.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
-      lang="en"
-      className={`${titanOne.variable} ${workSans.variable} antialiased`}
+      lang="en-AU"
+      className={`${GeistSans.variable} ${GeistMono.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        <main>{children}</main>
+      </body>
     </html>
   );
 }

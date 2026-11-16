@@ -1,0 +1,105 @@
+/* Design tokens. Values come from DESIGN.md §2; names mirror the Figma variables. */
+:root {
+  /* 2.1 Colour */
+  --color-ink: #0e0f11;
+  --color-paper: #f7f7f5;
+  --color-surface: #ffffff;
+  --color-accent: #3d6cf0;
+  --color-text-primary: #111214;
+  --color-text-secondary: #6b6e73;
+  --color-text-on-dark-primary: #ededeb;
+  --color-text-on-dark-secondary: #a9abaf;
+  --color-text-on-dark-muted: #7c7f85;
+  --color-text-on-dark-faint: #5a5d63;
+  --color-border: #dadbd8;
+  --color-border-on-dark: #2a2c30;
+  --color-placeholder: #e6e6e3;
+
+  /* 2.2 Typography. --font-geist-* are set on <html> by the geist package. */
+  --font-sans: var(--font-geist-sans), system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+
+  --text-display-size: 80px;
+  --text-display-leading: 1.04;
+  --text-display-tracking: -0.02em;
+
+  --text-h1-size: 64px;
+  --text-h1-leading: 1.05;
+  --text-h1-tracking: -0.02em;
+
+  --text-h2-size: 36px;
+  --text-h2-leading: 1.12;
+  --text-h2-tracking: -0.015em;
+
+  --text-h2-cta-size: 44px;
+  --text-h2-cta-leading: 1.1;
+  --text-h2-cta-tracking: -0.02em;
+
+  --text-h3-size: 17px;
+  --text-h3-value-size: 18px;
+  --text-h3-leading: 1.25;
+  --text-h3-tracking: -0.005em;
+
+  --text-stat-size: 44px;
+  --text-stat-leading: 1;
+  --text-stat-tracking: -0.02em;
+
+  --text-body-lg-size: 18px;
+  --text-body-lg-leading: 1.55;
+
+  --text-body-size: 16px;
+  --text-body-leading: 1.65;
+
+  --text-body-sm-size: 14px;
+  --text-body-sm-leading: 1.55;
+
+  --text-meta-size: 13px;
+  --text-meta-leading: 1.5;
+
+  --text-nav-size: 14px;
+  --text-nav-leading: 1;
+
+  --text-button-size: 14px;
+  --text-button-leading: 1;
+
+  --text-label-size: 12px;
+  --text-label-leading: 1.3;
+  --text-label-tracking: 0.5px;
+
+  --text-tag-size: 11px;
+  --text-tag-leading: 1.2;
+  --text-tag-tracking: 0.4px;
+
+  /* 2.3 Spacing */
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 20px;
+  --space-xl: 24px;
+  --space-2xl: 32px;
+  --space-3xl: 40px;
+  --space-4xl: 48px;
+  --space-5xl: 64px;
+  --space-6xl: 80px;
+  --space-7xl: 96px;
+
+  /* 2.4 Radius */
+  --radius-none: 0;
+  --radius-sm: 2px;
+
+  /* 2.5 Layout */
+  --content-max: 1180px;
+  --page-gutter: 24px;
+  --section-pad: 80px;
+  --section-pad-cta: 96px;
+  --section-pad-stats: 56px;
+  --section-pad-partners: 72px;
+
+  /* 2.6 Interaction */
+  --transition: 150ms ease-out;
+  --selection: rgb(61 108 240 / 20%); /* --color-accent at 20% */
+}
