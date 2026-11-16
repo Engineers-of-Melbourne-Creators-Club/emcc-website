@@ -143,3 +143,70 @@
   line-height: var(--text-tag-leading);
   letter-spacing: var(--text-tag-tracking);
 }
+
+.demo {
+  display: grid;
+  gap: var(--space-xl);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-xl);
+}
+
+.dark {
+  padding: var(--space-xl);
+  background: var(--color-ink);
+}
+
+/* Stretch to the viewport edges, out of the centred styleguide column. */
+.bleed {
+  display: grid;
+  gap: var(--space-xl);
+  margin-inline: calc(50% - 50vw);
+}
+
+.valueGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--space-3xl);
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-xl);
+}
+
+.photo {
+  width: var(--team-card-width);
+  aspect-ratio: 4 / 3;
+}
+
+.projectGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, var(--project-card-width));
+  gap: var(--space-xl);
+}
+
+.eventGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, var(--event-card-width));
+  gap: var(--space-xl);
+}
+
+.form {
+  display: grid;
+  gap: var(--space-lg);
+  max-width: var(--hero-intro-max);
+}
+
+@media (max-width: 767px) {
+  .projectGrid,
+  .eventGrid {
+    grid-template-columns: 1fr;
+  }
+}
