@@ -11,7 +11,6 @@ export type Project = {
   overview: string;
   status: string;
   year: string;
-  teamSize: string;
   team: { name: string; role: string; photo?: string }[];
   links: Link[];
   gallery: string[];
