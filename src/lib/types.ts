@@ -22,7 +22,11 @@ export type TeamGroup =
   | "Mechanical"
   | "Electrical"
   | "Software"
-  | "Civil & Environmental";
+  | "Civil & Environmental"
+  | "Publicity"
+  | "Events"
+  | "People & Culture"
+  | "HR";
 
 export type TeamMember = {
   name: string;

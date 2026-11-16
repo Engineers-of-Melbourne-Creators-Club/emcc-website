@@ -9,6 +9,12 @@
   gap: var(--space-xl);
 }
 
+/* Separates the engineering teams from the club's non-engineering teams. */
+.divider {
+  border: 0;
+  border-top: 1px solid var(--color-border);
+}
+
 .cards {
   display: flex;
   flex-wrap: wrap;
