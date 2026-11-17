@@ -1,7 +1,7 @@
 "use client";
 
-// Client component for the pending, error and success states. The form still posts without
-// JavaScript, because a server action passed to <form action> works as a plain HTML form.
+// Client component for the pending, error and success states. The action is wrapped (see `send`)
+// so failed requests show an inline error; the trade-off is the form now needs JavaScript to submit.
 import { useActionState } from "react";
 import { useFormStatus } from "react-dom";
 import { sendContactMessage, type ContactState } from "@/app/contact/actions";
@@ -11,8 +11,31 @@ import styles from "./ContactForm.module.css";
 
 const initial: ContactState = { status: "idle" };
 
+// The action throws when the request itself fails, e.g. Vercel's rate limit answers 429 instead of
+// running it. Without this the error reaches Next's "This page couldn't load" screen.
+async function send(
+  prev: ContactState,
+  formData: FormData,
+): Promise<ContactState> {
+  try {
+    return await sendContactMessage(prev, formData);
+  } catch {
+    const field = (name: string) => String(formData.get(name) ?? "");
+    return {
+      status: "error",
+      values: {
+        name: field("name"),
+        email: field("email"),
+        message: field("message"),
+      },
+      message:
+        "Sorry, your message could not be sent. If you've sent a few just now, wait 10 minutes and try again.",
+    };
+  }
+}
+
 export function ContactForm() {
-  const [state, formAction] = useActionState(sendContactMessage, initial);
+  const [state, formAction] = useActionState(send, initial);
 
   if (state.status === "success") {
     return (
