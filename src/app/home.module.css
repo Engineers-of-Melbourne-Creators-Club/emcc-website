@@ -4,9 +4,11 @@
   padding-block: var(--section-pad);
 }
 
+/* No top padding: Disciplines' bottom padding already separates the two, so the gap isn't doubled. */
 .projects {
   gap: var(--space-3xl);
   justify-items: start;
+  padding-top: 0;
 }
 
 .values {

@@ -95,9 +95,11 @@ main {
   margin-inline: auto;
 }
 
-/* Mono eyebrow label above headings and detail values. */
+/* Mono eyebrow label above headings and detail values. The weight is set so it stays regular
+   on heading elements too (e.g. the Partners <h2>), which browsers make bold by default. */
 .eyebrow {
   font-family: var(--font-mono);
+  font-weight: var(--weight-regular);
   font-size: var(--text-label-size);
   line-height: var(--text-label-leading);
   letter-spacing: var(--text-label-tracking);
