@@ -1,18 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
+import { site } from "@/content/site";
 import styles from "./Logo.module.css";
 
-// Fixed at 122 x 40: the logo was cut from a screenshot, so it must never be scaled up lol
+// logo-bw.svg is public/brand/logo.svg recoloured to black and white and cropped to the emblem.
 export function Logo() {
   return (
-    <Link href="/" aria-label="EMC² home" className={styles.logo}>
-      <Image
-        src="/brand/logo-mono.png"
-        alt=""
-        width={122}
-        height={40}
-        preload
-      />
+    <Link href="/" aria-label={`${site.name} home`} className={styles.logo}>
+      <Image src="/brand/logo-bw.svg" alt="" width={44} height={40} preload />
     </Link>
   );
 }
