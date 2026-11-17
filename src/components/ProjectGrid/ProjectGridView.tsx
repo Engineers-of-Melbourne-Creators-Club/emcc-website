@@ -1,17 +1,13 @@
 import { FilterTabs } from "@/components/FilterTabs/FilterTabs";
 import { ProjectCard } from "@/components/ProjectCard/ProjectCard";
+import { disciplines } from "@/content/disciplines";
 import type { Discipline, Project } from "@/lib/types";
 import styles from "./ProjectGrid.module.css";
 
 export type Filter = "All" | Discipline;
 
-export const filters: Filter[] = [
-  "All",
-  "Mechanical",
-  "Electrical",
-  "Software",
-  "Civil",
-];
+// Built from the content file so a new discipline gets a filter tab automatically.
+export const filters: Filter[] = ["All", ...disciplines.map((d) => d.name)];
 
 type Props = {
   projects: Project[];

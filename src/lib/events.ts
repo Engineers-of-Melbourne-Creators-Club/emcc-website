@@ -2,7 +2,7 @@ import type { ClubEvent } from "@/lib/types";
 
 // Today's date in Melbourne as "YYYY-MM-DD" (en-CA formats dates that way), so an event
 // stays "upcoming" for the whole of its day in Melbourne, whatever timezone the server is in.
-export const melbourneToday = (now: Date) =>
+const melbourneToday = (now: Date) =>
   new Intl.DateTimeFormat("en-CA", { timeZone: "Australia/Melbourne" }).format(
     now,
   );
