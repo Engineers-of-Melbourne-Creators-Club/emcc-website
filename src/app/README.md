@@ -2,7 +2,6 @@
 
 This folder uses the Next.js **App Router**: each folder is a URL, and the `page.tsx` inside it is what renders at that URL. Pages are mostly layout. They pull their text from [`src/content`](../content/README.md) and build the page out of [`src/components`](../components/README.md).
 
-
 ## Routes
 
 | URL                | File                       | What's on it                                                                                       |

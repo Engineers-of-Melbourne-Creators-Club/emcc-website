@@ -94,7 +94,7 @@
   /* Footer */
   --text-wordmark-size: 19px;
   --footer-pad-top: 56px;
-  --footer-pad-bottom: 28px;
+  --footer-pad-bottom: 22px; /* puts the copyright baseline just above the grid line one cell up */
   --footer-row-pad: 36px;
   --footer-list-gap: 10px;
   --footer-blurb-max: 280px;

@@ -7,13 +7,24 @@
      the top edge, so there's no blank strip for the rocket to fly into. */
   --grid-content-left: var(--space-4xl);
   --grid-top: 0;
+  /* Count grid lines up from the bottom, so there's always a line one cell above the bottom edge
+     for the copyright row to sit on, whatever the footer's height. */
+  --grid-y: bottom;
+  /* Column widths rounded down to whole grid cells, with no gap between them, so every column
+     (and every line of text in it) starts on a grid line. Roughly half plus 3 cells, a quarter,
+     and the rest. */
+  --footer-columns: calc(
+      round(down, 50%, var(--grid-cell)) + 3 * var(--grid-cell)
+    )
+    round(down, 25%, var(--grid-cell)) 1fr;
 }
 
 .top {
   position: relative; /* above the grid background */
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: var(--space-3xl);
+  grid-template-columns: 2fr 1fr 1fr; /* for browsers without CSS round() */
+  grid-template-columns: var(--footer-columns);
+  row-gap: var(--space-3xl);
   padding-bottom: var(--footer-row-pad);
 }
 
@@ -58,9 +69,36 @@
   color: var(--color-text-on-dark-primary);
 }
 
-.copyright {
+/* The link starts on the right-most major grid line where the word (about 62px, so 64px is
+   reserved) still fits inside the padding, so its first letter always touches a darker line and
+   it's never closer to the right edge than the copyright is to the left. */
+.bottom {
   position: relative; /* above the grid background */
+  display: grid;
+  grid-template-columns: 1fr auto; /* for browsers without CSS round() */
+  grid-template-columns:
+    round(down, calc(100% - var(--space-5xl)), var(--grid-major))
+    1fr;
+  align-items: baseline;
+  row-gap: var(--space-sm);
   padding-top: var(--space-lg);
+}
+
+.colophon {
+  font-family: var(--font-mono);
+  font-size: var(--text-label-size);
+  line-height: var(--text-label-leading);
+  letter-spacing: var(--text-label-tracking);
+  text-transform: uppercase;
+  color: var(--color-text-on-dark-muted);
+}
+
+.colophon:hover {
+  color: var(--color-text-on-dark-primary);
+}
+
+.copyright {
+  grid-column: 1 / -2;
   font-size: var(--text-meta-size);
   line-height: var(--text-meta-leading);
   color: var(--color-text-on-dark-muted);
@@ -95,8 +133,8 @@
 
 /* brand column full width above two link columns. */
 @media (max-width: 1023px) {
-  .top {
-    grid-template-columns: 1fr 1fr;
+  .footer {
+    --footer-columns: round(down, 50%, var(--grid-cell)) 1fr;
   }
 
   .brand {
@@ -108,5 +146,18 @@
   .footer {
     padding-inline: var(--page-gutter);
     --grid-content-left: var(--page-gutter);
+  }
+
+  /* Too narrow for the copyright to share a row: the link drops below it, at the right. */
+  .bottom {
+    grid-template-columns: 1fr;
+  }
+
+  .colophon {
+    justify-self: end;
+  }
+
+  .copyright {
+    grid-column: auto;
   }
 }

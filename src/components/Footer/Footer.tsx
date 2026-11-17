@@ -50,9 +50,14 @@ export function Footer() {
         </div>
       </div>
 
-      <p className={styles.copyright}>
-        © <CurrentYear /> {site.longName}.
-      </p>
+      <div className={styles.bottom}>
+        <p className={styles.copyright}>
+          © <CurrentYear /> {site.longName}.
+        </p>
+        <Link href="/colophon" className={styles.colophon}>
+          Colophon
+        </Link>
+      </div>
     </footer>
   );
 }
