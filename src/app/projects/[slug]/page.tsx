@@ -38,7 +38,7 @@ export default async function ProjectDetail({
   return (
     <>
       <section className={styles.hero}>
-        <GridBackground />
+        <GridBackground variant="projects" />
         <div className={`container ${styles.heroContent}`}>
           <Link href="/projects" className={styles.back}>
             ← All projects

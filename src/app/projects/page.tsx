@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function Projects() {
   return (
     <>
-      <TitleBand eyebrow="Work" title="What we've built." />
+      <TitleBand grid="projects" eyebrow="Work" title="What we've built." />
       <div className={`container ${styles.body}`}>
         {/* Reading the URL needs the browser, so the static HTML shows every project until it loads. */}
         <Suspense

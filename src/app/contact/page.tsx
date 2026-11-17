@@ -31,7 +31,7 @@ const details = [
 export default function Contact() {
   return (
     <>
-      <TitleBand eyebrow="Contact" title="Get in touch." />
+      <TitleBand grid="contact" eyebrow="Contact" title="Get in touch." />
 
       <div className={`container ${styles.body}`}>
         <dl className={styles.details}>

@@ -23,6 +23,7 @@ export default function Home() {
     <>
       <TitleBand
         hero
+        grid="home"
         eyebrow="EMC² / University of Melbourne"
         title="Build things that actually work."
         intro="Engineers of Melbourne Creators Club is a student community designing, building and testing real projects across mechanical, electrical, software and civil engineering."
