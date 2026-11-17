@@ -4,7 +4,7 @@ Marketing site for EMC² (Engineers of Melbourne Creators Club). Next.js App Rou
 
 ## Getting started
 
-Requires Node 20+ and pnpm.
+Requires Node 22.18+ (for `pnpm test`, which runs TypeScript directly) and pnpm.
 
 ```bash
 pnpm install
@@ -13,6 +13,7 @@ pnpm lint         # eslint + prettier --check
 pnpm typecheck    # generate route types, then tsc
 pnpm build        # production build
 pnpm format       # prettier --write
+pnpm test         # unit tests (node:test)
 ```
 
 ## Environment variables
