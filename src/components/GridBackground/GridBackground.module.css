@@ -65,6 +65,11 @@
   fill: var(--color-text-on-dark-muted);
 }
 
+/* Events: the edges the search has travelled. */
+.edge {
+  stroke-dasharray: 2 3;
+}
+
 .far {
   stroke-dasharray: 2 3;
   opacity: 0.5;
