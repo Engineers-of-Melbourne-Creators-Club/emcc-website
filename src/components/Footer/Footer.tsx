@@ -2,6 +2,7 @@ import Link from "next/link";
 import { cacheLife } from "next/cache";
 import { GridBackground } from "@/components/GridBackground/GridBackground";
 import { site } from "@/content/site";
+import { FooterFlyers } from "./FooterFlyer";
 import styles from "./Footer.module.css";
 
 const connect = [
@@ -14,6 +15,7 @@ export function Footer() {
   return (
     <footer className={styles.footer}>
       <GridBackground plain />
+      <FooterFlyers />
       <div className={styles.top}>
         <div className={styles.brand}>
           <p className={styles.wordmark}>{site.name}</p>

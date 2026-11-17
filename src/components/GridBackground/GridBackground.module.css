@@ -1,10 +1,15 @@
 .grid {
   position: absolute;
-  top: var(--grid-cell);
+  /* Title bands leave one blank cell at the top; a band can set --grid-top: 0 to fill it. */
+  top: var(--grid-top, var(--grid-cell));
   bottom: 0;
+  /* Lines up with the content's left edge. A band with its own side padding (the footer) sets --grid-content-left. */
   left: calc(
-    max(var(--page-gutter), (100% - var(--content-max)) / 2) - 20 *
-      var(--grid-major)
+    var(
+        --grid-content-left,
+        max(var(--page-gutter), (100% - var(--content-max)) / 2)
+      ) -
+      20 * var(--grid-major)
   );
   right: 0;
   pointer-events: none;

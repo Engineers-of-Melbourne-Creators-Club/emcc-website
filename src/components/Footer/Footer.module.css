@@ -3,6 +3,10 @@
   overflow: hidden;
   background: var(--color-ink);
   padding: var(--footer-pad-top) var(--space-4xl) var(--footer-pad-bottom);
+  /* Start the grid at the footer's own padding, so the text sits on a grid line, and right at
+     the top edge, so there's no blank strip for the rocket to fly into. */
+  --grid-content-left: var(--space-4xl);
+  --grid-top: 0;
 }
 
 .top {
@@ -11,7 +15,6 @@
   grid-template-columns: 2fr 1fr 1fr;
   gap: var(--space-3xl);
   padding-bottom: var(--footer-row-pad);
-  border-bottom: 1px solid var(--color-border-on-dark);
 }
 
 .wordmark {
@@ -63,6 +66,33 @@
   color: var(--color-text-on-dark-muted);
 }
 
+/* The little rocket from FooterFlyer. Positioned by a transform each frame. */
+.flyer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: visible;
+  pointer-events: none;
+  fill: var(--color-ink);
+  stroke: var(--color-text-on-dark-secondary);
+  stroke-width: 1.2;
+  stroke-linejoin: round;
+  will-change: transform;
+}
+
+.flame {
+  fill: var(--color-accent-on-dark);
+  stroke: none;
+  transform-origin: 3px 10px;
+  animation: flicker 0.15s ease-in-out infinite alternate;
+}
+
+@keyframes flicker {
+  to {
+    transform: scaleX(0.6);
+  }
+}
+
 /* brand column full width above two link columns. */
 @media (max-width: 1023px) {
   .top {
@@ -77,5 +107,6 @@
 @media (max-width: 767px) {
   .footer {
     padding-inline: var(--page-gutter);
+    --grid-content-left: var(--page-gutter);
   }
 }
