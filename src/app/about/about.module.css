@@ -10,6 +10,11 @@
   gap: var(--column-gap);
 }
 
+/* No top padding: Our story's bottom padding already separates the two, so the gap isn't doubled. */
+.valuesSection {
+  padding-top: 0;
+}
+
 .storyPhoto {
   height: var(--story-photo-height);
 }

@@ -26,7 +26,7 @@ Import with the `@/` alias, e.g. `import { Button } from "@/components/Button/Bu
 | `Logo`                       | The black-and-white emblem (`public/brand/logo-bw.svg`), linking home.                                                                                                                               |
 | `Footer`                     | Site blurb, quick links, contact links and the copyright year, on a grid background.                                                                                                                 |
 | `TitleBand`                  | The dark header strip at the top of every page: eyebrow, title, and optionally intro text and buttons (`hero` makes it the bigger Home version). Pass `grid="..."` to choose its background drawing. |
-| `CtaBand`                    | The closing "call to action" strip with a heading and one button, used at the end of Home and About.                                                                                                 |
+| `CtaBand`                    | The closing "call to action" strip with a heading and one button, used at the end of Home.                                                                                                           |
 | `SectionHeader`              | A numbered section heading ("01 / Projects"), with an optional subtitle. Give it an `id` and point the section's `aria-labelledby` at it.                                                            |
 
 ## Content blocks
