@@ -1,9 +1,12 @@
 .footer {
+  position: relative;
+  overflow: hidden;
   background: var(--color-ink);
   padding: var(--footer-pad-top) var(--space-4xl) var(--footer-pad-bottom);
 }
 
 .top {
+  position: relative; /* above the grid background */
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
   gap: var(--space-3xl);
@@ -53,6 +56,7 @@
 }
 
 .copyright {
+  position: relative; /* above the grid background */
   padding-top: var(--space-lg);
   font-size: var(--text-meta-size);
   line-height: var(--text-meta-leading);

@@ -22,7 +22,11 @@ const club = withMembers(clubGroups);
 export default function Team() {
   return (
     <>
-      <TitleBand eyebrow="Team" title="The people behind the projects." />
+      <TitleBand
+        grid="team"
+        eyebrow="Team"
+        title="The people behind the projects."
+      />
 
       <div className={`container ${styles.groups}`}>
         {engineering.map((g, i) => (

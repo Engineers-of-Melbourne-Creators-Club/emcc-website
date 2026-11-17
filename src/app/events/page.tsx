@@ -24,7 +24,7 @@ export default async function Events() {
 
   return (
     <>
-      <TitleBand eyebrow="Events" title="What's on." />
+      <TitleBand grid="events" eyebrow="Events" title="What's on." />
 
       <div className={`container ${styles.body}`}>
         <section aria-labelledby="upcoming" className={styles.section}>

@@ -23,3 +23,109 @@
     var(--grid-cell) var(--grid-cell),
     var(--grid-cell) var(--grid-cell);
 }
+
+/* Content's left edge, which is 20 major lines in from the grid's left edge. */
+.grid {
+  --origin: calc(20 * var(--grid-major));
+}
+
+.tick {
+  position: absolute;
+  top: 3px;
+  left: calc(var(--origin) + var(--i) * var(--grid-major) + 4px);
+  font: 10px/1 var(--font-mono);
+  color: var(--color-text-on-dark-muted);
+  opacity: 0.7;
+}
+
+/* Sits in the right half of the content, one cell below the top grid line. */
+.figure {
+  position: absolute;
+  top: var(--grid-cell);
+  left: calc(var(--origin) + 7 * var(--grid-major));
+  overflow: visible;
+  fill: none;
+  stroke: var(--color-text-on-dark-muted);
+  stroke-width: 1;
+}
+
+.figure text {
+  fill: var(--color-text-on-dark-muted);
+  stroke: none;
+  font: 10px var(--font-mono);
+  letter-spacing: 0.04em;
+}
+
+.node {
+  fill: var(--color-text-on-dark-muted);
+}
+
+.far {
+  stroke-dasharray: 2 3;
+  opacity: 0.5;
+}
+
+/* Contact: the Melbourne marker. */
+.ping {
+  fill: var(--color-accent-on-dark);
+  stroke: var(--color-accent-on-dark);
+}
+
+.full {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Below this the title fills the band, so the figure would sit under the text. */
+@media (max-width: 1023px) {
+  .figure {
+    display: none;
+  }
+
+  .figure.full {
+    display: block;
+  }
+}
+
+.tracker {
+  position: absolute;
+  inset: 0;
+}
+
+.trackerV,
+.trackerH {
+  position: absolute;
+  background: var(--color-accent-on-dark);
+  opacity: 0.25;
+}
+
+.trackerV {
+  top: 0;
+  bottom: 0;
+  width: 1px;
+}
+
+.trackerH {
+  left: 0;
+  right: 0;
+  height: 1px;
+}
+
+.trackerDot {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  margin: -3px 0 0 -3px;
+  border: 1px solid var(--color-accent-on-dark);
+}
+
+.trackerLabel {
+  position: absolute;
+  margin: 8px 0 0 10px;
+  font: 11px/1 var(--font-mono);
+  color: var(--color-accent-on-dark);
+  white-space: nowrap;
+}

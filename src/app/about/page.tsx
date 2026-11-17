@@ -19,7 +19,17 @@ const process = ["Learn", "Build", "Show"];
 export default function About() {
   return (
     <>
-      <TitleBand eyebrow="About" title="A club for people who build." />
+      <TitleBand
+        grid="about"
+        eyebrow="About"
+        title={
+          <>
+            A club for people
+            <br />
+            who build.
+          </>
+        }
+      />
 
       <section
         aria-labelledby="story"
