@@ -5,7 +5,7 @@ import type { ReactNode } from "react";
 // About: LiveFigure draws the robot arm, so there is nothing static.
 const about = null;
 
-// Team: only the coordinate tracker, which GridBackground adds.
+// Team: the sine wave, which GridBackground draws across the whole band.
 const team = null;
 
 // Projects: label for the exploded differential that LiveFigure draws.

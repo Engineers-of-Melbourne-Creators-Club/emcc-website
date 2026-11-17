@@ -56,7 +56,7 @@ Import with the `@/` alias, e.g. `import { Button } from "@/components/Button/Bu
 
 ## `GridBackground`: the engineering drawings
 
-The graph-paper grid behind every title band, plus an optional animated drawing on top. It's decorative only: hidden from screen readers and ignoring the mouse (except the Team crosshair).
+The graph-paper grid behind every title band, plus an optional animated drawing on top. It's decorative only: hidden from screen readers. Every band except `plain` ones also gets a crosshair that follows the mouse.
 
 ```tsx
 <GridBackground variant="projects" />  // grid + that page's drawing
@@ -65,14 +65,14 @@ The graph-paper grid behind every title band, plus an optional animated drawing 
 
 The parent element must be `position: relative` (and usually `overflow: hidden`), and its content needs `position: relative` to sit above the grid.
 
-| Variant    | Drawing                                                        | Where it's drawn                |
-| ---------- | -------------------------------------------------------------- | ------------------------------- |
-| `home`     | Bevel gear pair, turning                                       | `LiveFigure.tsx`                |
-| `about`    | Robotic arm doing pick-and-place                               | `LiveFigure.tsx`                |
-| `team`     | Crosshair that follows the mouse and shows grid coordinates    | `CoordinateTracker.tsx`         |
-| `projects` | Exploded spur gear differential, parts turning, plus its label | `LiveFigure.tsx`, `figures.tsx` |
-| `events`   | Breadth-first search spreading across the whole band           | `GraphSearch.tsx`               |
-| `contact`  | Rotating globe with Melbourne marked, plus its labels          | `LiveFigure.tsx`, `figures.tsx` |
+| Variant    | Drawing                                                                                                                | Where it's drawn                |
+| ---------- | ---------------------------------------------------------------------------------------------------------------------- | ------------------------------- |
+| `home`     | Bevel gear pair, turning                                                                                               | `LiveFigure.tsx`                |
+| `about`    | Robotic arm doing pick-and-place                                                                                       | `LiveFigure.tsx`                |
+| `team`     | Wave with 4 peaks across the whole band, shrinking until it converges to a point on the right; traces itself and loops | `GridBackground.tsx`            |
+| `projects` | Exploded spur gear differential, parts turning, plus its label                                                         | `LiveFigure.tsx`, `figures.tsx` |
+| `events`   | Breadth-first search spreading across the whole band                                                                   | `GraphSearch.tsx`               |
+| `contact`  | Rotating globe with Melbourne marked, plus its labels                                                                  | `LiveFigure.tsx`, `figures.tsx` |
 
 **Files**
 
@@ -83,7 +83,7 @@ The parent element must be `position: relative` (and usually `overflow: hidden`)
 | `figures.tsx`                    | Static parts that don't move (text labels). Also the list of variant names: add a key here for a new one.                                                                                         |
 | `LiveFigure.tsx` (client)        | The 3D wireframes. Each scene is a function of time that returns lines in 3D; `wireframe()` rotates and flattens them into SVG paths. Back edges are drawn dotted so front and back read clearly. |
 | `GraphSearch.tsx` (client)       | The Events graph: places nodes on grid points (avoiding the title), links each to its nearest neighbours, and animates a breadth-first search from the left. Starts a new random graph each loop. |
-| `CoordinateTracker.tsx` (client) | The Team crosshair. Snaps to grid points and shows `X · Y` in grid cells, counted from the content's left edge. Only shows with a mouse.                                                          |
+| `CoordinateTracker.tsx` (client) | The crosshair on every title band. Snaps to grid points and shows `X · Y` in grid cells, counted from the content's left edge. Only shows with a mouse.                                           |
 
 **Behaviour to know about**
 
