@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { CtaBand } from "@/components/CtaBand/CtaBand";
 import { Photo } from "@/components/Photo/Photo";
 import { SectionHeader } from "@/components/SectionHeader/SectionHeader";
 import { TitleBand } from "@/components/TitleBand/TitleBand";
@@ -52,7 +51,7 @@ export default function About() {
 
       <section
         aria-labelledby="values"
-        className={`container ${styles.section}`}
+        className={`container ${styles.section} ${styles.valuesSection}`}
       >
         <SectionHeader
           id="values"
@@ -85,11 +84,6 @@ export default function About() {
           ))}
         </ol>
       </section>
-
-      <CtaBand
-        title="Come build with us."
-        action={{ label: "Get in touch", href: "/contact" }}
-      />
     </>
   );
 }
