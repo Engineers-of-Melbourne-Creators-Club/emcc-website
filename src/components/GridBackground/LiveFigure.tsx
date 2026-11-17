@@ -367,8 +367,17 @@ export function LiveFigure({ kind }: { kind: LiveKind }) {
     const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
     let raf = 0;
     const draw = (ms: number) => {
-      // Skip the maths while the figure is hidden on small screens.
-      if (near.current?.getClientRects().length) {
+      // Skip the maths while the figure is hidden on small screens or its band is scrolled off-screen.
+      // The band (svg → grid → band) is checked, not the svg, because drawings hang outside the svg box.
+      const svg = near.current?.ownerSVGElement;
+      const band = svg?.parentElement?.parentElement?.getBoundingClientRect();
+      if (
+        near.current &&
+        svg?.getClientRects().length &&
+        band &&
+        band.bottom > 0 &&
+        band.top < innerHeight
+      ) {
         const f = scenes[kind](ms / 1000);
         near.current.setAttribute("d", f.near);
         far.current?.setAttribute("d", f.far ?? "");

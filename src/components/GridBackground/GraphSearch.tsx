@@ -129,6 +129,11 @@ export function GraphSearch() {
       if (!treeEl || !dotsEl) return;
       const svg = svgEl.getBoundingClientRect();
       const b = band.getBoundingClientRect();
+      // Skip the work while the band is scrolled off-screen, but keep the loop alive for when it returns.
+      if (!still && (b.bottom <= 0 || b.top >= innerHeight)) {
+        raf = requestAnimationFrame(draw);
+        return;
+      }
       const x0 = b.left - svg.left;
       const next = `${b.width}x${svg.height}`;
       const t = (ms - start) / 1000;
