@@ -197,7 +197,7 @@ export function GraphSearch() {
 
   return (
     <g>
-      <path ref={tree} />
+      <path ref={tree} className={styles.edge} />
       <g ref={dots} />
     </g>
   );
