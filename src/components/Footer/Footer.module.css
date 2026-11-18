@@ -3,10 +3,10 @@
   overflow: hidden;
   background: var(--color-ink);
   padding: var(--footer-pad-top) var(--space-4xl) var(--footer-pad-bottom);
-  /* Start the grid at the footer's own padding, so the text sits on a grid line, and right at
-     the top edge, so there's no blank strip for the rocket to fly into. */
+  /* Start the grid at the footer's own padding, so the text sits on a grid line. The grid leaves
+     a blank one-cell bar at the top like the title bands do; FooterFlyer keeps rockets out of it. */
   --grid-content-left: var(--space-4xl);
-  --grid-top: 0;
+  --grid-top: var(--grid-cell);
   /* Count grid lines up from the bottom, so there's always a line one cell above the bottom edge
      for the copyright row to sit on, whatever the footer's height. */
   --grid-y: bottom;
@@ -17,6 +17,18 @@
       round(down, 50%, var(--grid-cell)) + 3 * var(--grid-cell)
     )
     round(down, 25%, var(--grid-cell)) 1fr;
+}
+
+/* The grid counts its lines up from the bottom, so its top edge may fall between lines. This
+   draws the line under the bar either way. */
+.footer::before {
+  content: "";
+  position: absolute;
+  top: var(--grid-top);
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--color-border-on-dark);
 }
 
 .top {
