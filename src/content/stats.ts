@@ -1,6 +1,7 @@
+// PLACEHOLDER: stats could be wrong 
 export const stats = [
-  { value: "00", label: "Members" }, // PLACEHOLDER
+  { value: "70", label: "Members" }, 
   { value: "4", label: "Disciplines" },
-  { value: "00", label: "Projects" }, // PLACEHOLDER
-  { value: "00", label: "Events run" }, // PLACEHOLDER
+  { value: "10", label: "Projects" }, 
+  { value: "5", label: "Events run" }, 
 ];

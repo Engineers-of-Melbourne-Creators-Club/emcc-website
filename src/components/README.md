@@ -44,7 +44,7 @@ Import with the `@/` alias, e.g. `import { Button } from "@/components/Button/Bu
 | `EventCard/EventRow`          | A past event as a single compact row.                                                                                                    |
 | `EventCard/EventTitle`        | An event's title, or a link if the event has one. Shared by the card and the row.                                                        |
 | `TeamMemberCard`              | Photo, name and role.                                                                                                                    |
-| `StatBlock`                   | A big number with a label ("40+ Members"). Values are strings so they show exactly as written.                                           |
+| `StatBlock`                   | A big number with a label ("40+ Members") that counts up when scrolled into view. Values are strings.                                    |
 | `ValueItem`                   | A numbered item with a title and description, used for disciplines and values.                                                           |
 
 ## Forms

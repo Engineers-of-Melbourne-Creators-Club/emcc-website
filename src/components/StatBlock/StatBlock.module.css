@@ -9,6 +9,18 @@
   letter-spacing: var(--text-stat-tracking);
   font-weight: var(--weight-medium);
   color: var(--color-text-on-dark-primary);
+  position: relative;
+  /* Every digit the same width, so the count doesn't jitter. */
+  font-variant-numeric: tabular-nums;
+}
+
+.hidden {
+  color: transparent;
+}
+
+.counter {
+  position: absolute;
+  inset: 0;
 }
 
 .label {
