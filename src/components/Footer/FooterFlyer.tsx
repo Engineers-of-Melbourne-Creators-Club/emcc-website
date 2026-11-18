@@ -48,7 +48,8 @@ type Box = { l: number; r: number; t: number; b: number };
 
 // One box per line of actual text in the footer, grown by R, in footer coordinates. Measuring
 // the text itself (not its element) leaves the empty part of each column free to fly through.
-function textBoxes(footer: HTMLElement, f: DOMRect): Box[] {
+// `top` is where the flying area starts (below the blank bar).
+function textBoxes(footer: HTMLElement, f: DOMRect, top: number): Box[] {
   const boxes: Box[] = [];
   const range = document.createRange();
   const walk = document.createTreeWalker(footer, NodeFilter.SHOW_TEXT);
@@ -66,7 +67,7 @@ function textBoxes(footer: HTMLElement, f: DOMRect): Box[] {
       // the copyright line) is closed off, so a rocket can't get in and rattle along it.
       const tight = 3 * R;
       if (box.l < tight) box.l = -R;
-      if (box.t < tight) box.t = -R;
+      if (box.t < top + tight) box.t = -R;
       if (box.r > f.width - tight) box.r = f.width + R;
       if (box.b > f.height - tight) box.b = f.height + R;
       boxes.push(box);
@@ -95,14 +96,17 @@ export function FooterFlyers() {
 
     // Each rocket starts at a random clear spot in its own third of the footer, so they don't
     // begin on top of each other or on top of text (which they would then fly straight through).
+    // Rockets stay out of the blank bar at the top of the footer, one grid cell tall.
+    const top =
+      parseFloat(getComputedStyle(footer).getPropertyValue("--grid-top")) || 0;
     const start = footer.getBoundingClientRect();
-    const startBoxes = textBoxes(footer, start);
+    const startBoxes = textBoxes(footer, start, top);
     const rockets: Rocket[] = els.map((_, i) => {
       let x = 0;
       let y = 0;
       for (let tries = 0; tries < 50; tries++) {
         x = start.width * ((i + Math.random()) / COUNT);
-        y = R + Math.random() * (start.height - 2 * R);
+        y = top + R + Math.random() * (start.height - top - 2 * R);
         if (!startBoxes.some((box) => inBox(x, y, box))) break;
       }
       return {
@@ -125,7 +129,7 @@ export function FooterFlyers() {
       }
       const dt = last ? Math.min((ms - last) / 1000, 0.05) : 0;
       last = ms;
-      const text = textBoxes(footer, f);
+      const text = textBoxes(footer, f, top);
 
       for (const rk of rockets) {
         rk.phase += WEAVE * dt;
@@ -143,10 +147,10 @@ export function FooterFlyers() {
           awayX += nx < R ? 1 : -1;
           nx = Math.min(Math.max(nx, R), f.width - R);
         }
-        if (ny < R || ny > f.height - R) {
+        if (ny < top + R || ny > f.height - R) {
           vy = -vy;
-          awayY += ny < R ? 1 : -1;
-          ny = Math.min(Math.max(ny, R), f.height - R);
+          awayY += ny < top + R ? 1 : -1;
+          ny = Math.min(Math.max(ny, top + R), f.height - R);
         }
 
         // Text is a wall: flip the axis it was crossed on. A box the rocket is already inside
